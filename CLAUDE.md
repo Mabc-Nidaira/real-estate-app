@@ -80,6 +80,14 @@ npm run preview  # ビルド結果の確認
 
 - テストは未導入。プッシュ前は最低限 `npm run build` が通ることを確認する。
 
+## デプロイ(Vercel)
+
+- `vercel.json` で、すべての URL を `index.html` に書き換える(rewrites)。`/properties` などを直接開いたりリロードしたりしても 404 にならず、React Router が画面を表示する。
+  - `dist/assets/` などの実在するファイルは、書き換えより先にそのまま返される。
+- 環境変数(`VITE_SUPABASE_URL`、`VITE_SUPABASE_PUBLISHABLE_KEY`)は Vercel ダッシュボードの「Settings → Environment Variables」で設定する。`vercel.json` には書かない。
+- 環境変数を追加・変更したら、再デプロイしないと反映されない(ビルドのときに埋め込まれるため)。
+- Supabase の「Authentication → URL Configuration」の Site URL と Redirect URLs に、Vercel の URL を追加する。
+
 ## Git 運用ルール
 
 - **コードを変更するたびに、コミットして GitHub にプッシュする。**
