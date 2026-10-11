@@ -1,0 +1,9 @@
+node_modules
+dist
+*.log
+.DS_Store
+
+# Supabase の接続情報などを含む環境変数ファイル(コミットしない)
+.env
+.env.*
+!.env.example
