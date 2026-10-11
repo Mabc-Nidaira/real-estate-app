@@ -121,26 +121,73 @@ button:disabled {
   word-break: break-all;
 }
 
+.property-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 40px;
+}
+
+.count {
+  margin: 0;
+  color: #555;
+}
+
+.empty {
+  text-align: center;
+  color: #888;
+  padding: 40px 0;
+}
+
 .property-grid {
   list-style: none;
-  margin: 0 auto;
-  padding: 24px;
-  max-width: 1100px;
+  margin: 0;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 16px;
 }
 
 .property-card {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
 .property-card h2 {
-  margin: 0 0 12px;
+  margin: 0;
   font-size: 1.1rem;
+  word-break: break-word;
+}
+
+/* 間取りのバッジ */
+.layout {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  background: #e8f0fe;
+  color: #1d4ed8;
 }
 
 .property-card .rent {
@@ -161,4 +208,80 @@ button:disabled {
   margin: 0;
   color: #666;
   font-size: 0.9rem;
+  word-break: break-word;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.card-actions button {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+}
+
+/* ===== 物件の登録・編集フォーム ===== */
+.property-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.property-form h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px 16px;
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.form-grid input {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* ===== ボタンのバリエーション ===== */
+button.secondary {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+button.secondary:disabled {
+  color: #aaa;
+  background: #f5f5f5;
+}
+
+button.danger {
+  background: #ef4444;
+}
+
+button.danger:disabled {
+  background: #f5a3a3;
 }
