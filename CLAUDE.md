@@ -80,6 +80,13 @@ npm run preview  # ビルド結果の確認
 
 - テストは未導入。プッシュ前は最低限 `npm run build` が通ることを確認する。
 
+## デプロイ情報
+
+- 本番URL:https://real-estate-lngbruypr-mabc-nidaira.vercel.app
+  - 特定のデプロイ用の URL で、Vercel の認証(チームメンバーのみ閲覧可)がかかっている
+  - 一般公開されている URL(2026-10-11 時点で確認): https://real-estate-app-psi-lyart.vercel.app
+- Supabaseプロジェクト名:real-estate-app
+
 ## デプロイ(Vercel)
 
 - `vercel.json` で、すべての URL を `index.html` に書き換える(rewrites)。`/properties` などを直接開いたりリロードしたりしても 404 にならず、React Router が画面を表示する。
